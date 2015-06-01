@@ -11,6 +11,12 @@ my @out;
 
 my ($call, @refnums)=split(/\s+/, $line);
 
+if ( $call =~ /^..$/ ) { 
+	# I guess there is no call and call is a refnum
+	push @refnum, $call; 
+	$call=$self->call;
+}
+
 # send qsp 
 foreach my $ref (@refnums) {
 	my $telegram=$self->{qtc_query}->telegram_by_refnum($ref, lc($call)); 
