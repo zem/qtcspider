@@ -1,8 +1,7 @@
 #
-# set the qtc flag 
+# qsp qtc telegrams per call
 #
-# Copyright (c) 2006 - Dirk Koopman
-#
+# Copyright (c) 2015 - Hans Freitag
 #
 #
 
