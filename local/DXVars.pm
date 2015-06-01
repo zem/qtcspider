@@ -96,4 +96,10 @@ $do_xml = 0;
 # configure root directory for qtc net 
 $qtc_root="/var/spool/qtc/messages"; 
 
+# this is the path to the directory where your private key is located.
+$qtc_privpath="/var/spool/qtc/qtc-web/oe1xgb_ea71c25a7a602246b4c39824b855678894a96f43bb9b71319c39700a1e045222"; 
+
+# configure root directory for qtc net 
+$qtc_interface_http_url="http://www.qtc-net.org/qtc-if.cgi"; 
+
 1;
