@@ -1,13 +1,23 @@
 #
-# set the qtc flag 
+# send a telegram
 #
-# Copyright (c) 2006 - Dirk Koopman
-#
+# Copyright (c) 2015 - Hans Freitag
 #
 #
 
 my ($self, $line) = @_;
-my @out;
-$self->user->wantqtc(1);
-push @out, $self->msg('qtcs', $self->call);
-return (1, @out);
+my $from_call=substr($line, 0, index($line, " ")); 
+$line = substr($line, index($line, " ")+1);
+my $to_call=substr($line, 0, index($line, " ")); 
+$line = substr($line, index($line, " ")+1);
+
+eval {
+	$self->{qtc_publish}->telegram(
+		from=>$self->{qtc_publish}->allowed_letters_for_call(lc($from_call)),
+		to=>$self->{qtc_publish}->allowed_letters_for_call(lc($to_call)),
+		telegram=>$self->{qtc_publish}->allowed_letters_for_telegram($line), 
+	); 
+};
+
+return (1, "submitting telegram from $from_call to $to_call", $@);
+
