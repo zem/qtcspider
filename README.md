@@ -4,9 +4,9 @@ qtc net patch for dxspider
 
 This one shows spots like this: 
 
-DX de OE1SRC:     3566.0  DD5TT        good dx                       1749Z QTC 1
+> DX de OE1SRC:     3566.0  DD5TT        good dx                       1749Z QTC 1
 or if the user wants a different setting: 
-DX de OE1SRC:     3566.0  OE5XML       QTC 3 - good dx               1749Z JN88
+> DX de OE1SRC:     3566.0  OE5XML       QTC 3 - good dx               1749Z JN88
 
 you may show telegrams for a call:
 
