@@ -39,6 +39,8 @@ use DXXml;
 use AsyncMsg;
 
 use qtc::query;
+use POSIX qw(strftime); 
+use Data::Dumper; 
 
 use strict;
 use vars qw(%Cache %cmd_cache $errstr %aliases $scriptbase %nothereslug
@@ -957,6 +959,24 @@ sub chat
 		$buf .= "\a\a" if $self->{beep};
 	}
 	$self->local_send('C', $buf);
+}
+
+# format a qtc net telegram 
+sub format_telegram {
+	my $self=shift; 
+	my $msg=shift; # this is a qtc net message object
+	my @ret;
+
+	#push @ret, Dumper($msg); 
+	#return @ret; 
+	
+	push @ret, "------------------------------------------------------";
+	push @ret, strftime("%Y-%m-%d %H:%M:%S UTC", gmtime($msg->telegram_date))." UTC  --  publisher: ".$msg->call; 
+	push @ret, "nr.: ".$msg->hr_refnum."  --  from: ".$msg->from."  --  to: ".$msg->to; 
+	push @ret, "text: ".$msg->telegram; 
+	push @ret, " ";
+
+	return @ret; 
 }
 
 sub format_dx_spot

@@ -1,10 +1,11 @@
 #
-# unset the gtk flag
+# unset the qtc flag 
 #
-# Copyright (c) 2006 - Dirk Koopman
+# Copyright (c) 2015 - Hans Freitag
 #
 #
 #
+
 
 my ($self, $line) = @_;
 my @out;

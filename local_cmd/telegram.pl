@@ -1,7 +1,7 @@
 #
 # set the qtc flag 
 #
-# Copyright (c) 2015 - Hans Freitag
+# Copyright (c) 2006 - Dirk Koopman
 #
 #
 #

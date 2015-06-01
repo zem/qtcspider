@@ -1,7 +1,7 @@
 #
-# set the qtc flag 
+# set the qtc_as_comment flag 
 #
-# Copyright (c) 2006 - Dirk Koopman
+# Copyright (c) 2015 - Hans Freitag
 #
 #
 #
