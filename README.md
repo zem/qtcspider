@@ -21,10 +21,37 @@ or
 
 if you received them in the first place.....
 
+the command: 
+> telegram [fromcall] [tocall] [text]
 
-a command like 
-> telegram 
+can be used to send a telegram text from one call to another one via qtc.... 
 
-is in progress as well as the help 
+INSTALLATION: 
+
+git clone spider  (from the DXSpider Repository)
+git clone qtcspider 
+link ./local_cmd and ./local from qtcspider to spider 
+follow the instructions in the DXSpider documentation for installation.... 
+add the following to DXVars.pm:
+
+ # configure root directory for qtc net 
+
+ # example: 
+
+ #$qtc_root="/var/spool/qtc/messages"; 
+ 
+
+ # this is the path to the directory where your private key is located.
+
+ # example:
+
+ #$qtc_privpath="/var/spool/qtc/qtc-keys/oe1xgb_somechecksum"; 
 
 
+ # configure the url used to publish qtc-net messages if spider runs 
+
+ # with a differend user than the qtc processor 
+
+ # example:
+
+ #$qtc_interface_http_url="http://www.qtc-net.org/qtc-if.cgi"; 
