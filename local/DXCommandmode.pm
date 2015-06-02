@@ -38,9 +38,6 @@ use VE7CC;
 use DXXml;
 use AsyncMsg;
 
-use qtc::query;
-use qtc::publish;
-use qtc::interface::http;
 use POSIX qw(strftime); 
 
 use strict;
@@ -81,6 +78,10 @@ sub new
 
 	# we need a qtc query and a publisher
 	if ( $main::qtc_root ) {
+		use qtc::query;
+		use qtc::publish;
+		use qtc::interface::http;
+
 		$self->{qtc_query}=qtc::query->new(
 			path=>$main::qtc_root
 		); 
@@ -1026,7 +1027,7 @@ sub format_dx_spot
 	}
 
 	# format qtc information into the cluster message 
-	if ( $self->{user}->wantqtc ) {
+	if (( $main::qtc_root ) and ( $self->{user}->wantqtc )) {
 		my $num_qtc=$self->{qtc_query}->num_telegrams(lc($_[1])); 
 		if ( $num_qtc ) {
 			if ( $self->{user}->wantqtc_as_comment ) {

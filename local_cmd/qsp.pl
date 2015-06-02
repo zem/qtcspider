@@ -7,6 +7,8 @@
 my ($self, $line) = @_;
 my @out;
 
+if ( ! $main::qtc_root ) { return (1, "there is no QTC-NET configured on this spider"); }
+
 my ($call, @refnums)=split(/\s+/, $line);
 
 if ( $call =~ /^..$/ ) { 

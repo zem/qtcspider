@@ -9,4 +9,5 @@ my ($self, $line) = @_;
 my @out;
 $self->user->wantqtc_as_comment(0);
 push @out, $self->msg('qtc_as_commentu', $self->call);
+if ( ! $main::qtc_root ) { push @out, "there is no QTC-NET configured on this spider"; }
 return (1, @out);
