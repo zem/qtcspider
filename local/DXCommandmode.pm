@@ -84,7 +84,7 @@ sub new
 		$self->{qtc_query}=qtc::query->new(
 			path=>$main::qtc_root
 		); 
-		if ( $main::qtc_privpath ) 
+		if ( $main::qtc_privpath ) {
 			my $qtc_interface; 
 			if ( $main::qtc_interface_http_url ) {
 				$qtc_interface=qtc::interface::http->new(
