@@ -84,14 +84,18 @@ sub new
 		$self->{qtc_query}=qtc::query->new(
 			path=>$main::qtc_root
 		); 
-		if ( ( $main::qtc_privpath ) and ( $main::qtc_interface_http_url ) ) { 
+		if ( $main::qtc_privpath ) 
+			my $qtc_interface; 
+			if ( $main::qtc_interface_http_url ) {
+				$qtc_interface=qtc::interface::http->new(
+					path=>$main::qtc_root,
+					url=>$main::qtc_interface_http_url,
+				);
+			}
 			$self->{qtc_publish}=qtc::publish->new(
 				path=>$main::qtc_root,
 				privpath=>$main::qtc_privpath,
-				interface=>qtc::interface::http->new(
-					path=>$main::qtc_root,
-					url=>$main::qtc_interface_http_url,
-				),
+				interface=>$qtc_interface,
 			); 
 		}
 	}
