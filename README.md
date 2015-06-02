@@ -34,15 +34,24 @@ link ./local_cmd and ./local from qtcspider to spider
 follow the instructions in the DXSpider documentation for installation.... 
 add the following to DXVars.pm:
 
-# configure root directory for qtc net 
-# example:
-#$qtc_root="/var/spool/qtc/messages"; 
+ # configure root directory for qtc net 
 
-# this is the path to the directory where your private key is located.
-# example:
-#$qtc_privpath="/var/spool/qtc/qtc-keys/oe1xgb_somechecksum"; 
+ # example: 
 
-# configure the url used to publish qtc-net messages if spider runs 
-# with a differend user than the qtc processor 
-# example:
-#$qtc_interface_http_url="http://www.qtc-net.org/qtc-if.cgi"; 
+ #$qtc_root="/var/spool/qtc/messages"; 
+ 
+
+ # this is the path to the directory where your private key is located.
+
+ # example:
+
+ #$qtc_privpath="/var/spool/qtc/qtc-keys/oe1xgb_somechecksum"; 
+
+
+ # configure the url used to publish qtc-net messages if spider runs 
+
+ # with a differend user than the qtc processor 
+
+ # example:
+
+ #$qtc_interface_http_url="http://www.qtc-net.org/qtc-if.cgi"; 
