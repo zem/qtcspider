@@ -134,6 +134,7 @@ package DXM;
 				qtc_as_commentu => 'Show QTC info in Info.',
 				qtcs => 'QTC output enabled',
 				qtcu => 'QTC output disabled',
+				qtcunconf => 'QTC NET is not configured on this DXSpider, please contact the sysadmin!',
 				gtks => 'GTK output enabled for $_[0]',
 				gtku => 'GTK output disabled for $_[0]',
 				illcall => 'Sorry, $_[0] is an invalid callsign',
