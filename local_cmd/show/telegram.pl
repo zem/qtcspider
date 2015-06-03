@@ -8,6 +8,8 @@
 my ($self, $line) = @_;
 my @out;
 
+if ( ! $main::qtc_root ) { return (1, $self->msg('qtcunconf')); }
+
 my ($call, $type, $anz, $offset)=split(/\s+/, $line);
 
 if ( $call =~ /^(new)|(timeline_new)|(timeline)|(all)|(sent)$/ ) { 

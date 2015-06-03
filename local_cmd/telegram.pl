@@ -7,7 +7,7 @@
 
 my ($self, $line) = @_;
 
-if ( ! $main::qtc_root ) { return (1, "there is no QTC-NET configured on this spider"); }
+if ( ! $main::qtc_root ) { return (1, $self->msg('qtcunconf')); }
 
 my $from_call=substr($line, 0, index($line, " ")); 
 $line = substr($line, index($line, " ")+1);
